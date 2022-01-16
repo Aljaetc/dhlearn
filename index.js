@@ -26,7 +26,7 @@ app.get('/order', (req, res) => {
         </nav>
       <h1>Orders page</h1>
       <pre>
-        ${JSON.stringify(ORDERS)}
+        ${JSON.stringify(ORDERS, null, 2)}
       </pre>
       </div>
   `)
