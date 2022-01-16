@@ -1,12 +1,16 @@
 const express = require('express')
+const bodyParser = require('body-parser');
 const app = express()
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 const PORT = process.env.PORT || 80
 
 const ORDERS = []
 
-app.use(express.json()) // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+// app.use(express.json()) // for parsing application/json
+// app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 app.get('/order', (req, res) => {
   res.status(200).end(`
